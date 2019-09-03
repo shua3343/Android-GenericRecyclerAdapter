@@ -1,7 +1,7 @@
 
 [![](https://jitpack.io/v/shua3343/Android-GenericRecyclerAdapter.svg)](https://jitpack.io/#shua3343/Android-GenericRecyclerAdapter)
 
-# Android Centered Toolbar
+# Android Generic Recycler Adapter
 
 This library will allow you to use the usual androidx recycler view, but you dont have to worry about creating your own recycler view adapter, as long as you doesn't need something complex.
 ___
