@@ -68,6 +68,30 @@ class GenericData {
 }
 ```
 
+If you want to add a listener in any of your views, you just need to call the method 
+
+```GenericAdapter.addListener([id of your view], [listener tha you want])```, just as bellow.
+
+
+```java
+GenericAdapter genericAdapter = new GenericAdapter(R.layout.recycler_item, genericDataList);
+genericAdaper.addListener(
+	R.id.text_view, 
+	new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                aMethod();
+            }
+        });
+```
+
+Or
+
+```java
+GenericAdapter genericAdapter = new GenericAdapter(R.layout.recycler_item, genericDataList);
+genericAdaper.addListener(R.id.text_view, (View.OnClickListener) v -> aMethod());
+```
+
 ## Adding in your project
 
 ### Maven
