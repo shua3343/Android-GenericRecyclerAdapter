@@ -10,7 +10,7 @@ ___
  This lib uses **Glide 4.9.0** and **AndroidX**.
  **Minimum sdk 14**.
  
-## Patch note
+## Patch notes: 1.0.1
 Were created two new methods: 'getItemByViewId' and 'getPositionByViewId', to obtain the data from the list passed through parameters and the position of the view in the recycler respectively.
 
 wich can be used like this
