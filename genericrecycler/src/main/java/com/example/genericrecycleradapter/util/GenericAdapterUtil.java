@@ -1,4 +1,4 @@
-package com.example.genericrecycleradapter;
+package com.example.genericrecycleradapter.util;
 
 import android.os.Build;
 import android.view.View;
@@ -26,13 +26,13 @@ import static android.view.View.OnSystemUiVisibilityChangeListener;
 import static android.view.View.OnTouchListener;
 
 
-abstract class GenericAdapterUtil {
+public abstract class GenericAdapterUtil {
 
     private static final String SPLIT_REGEX = ":";
-    static final CharSequence CHECK_SUFFIX = "contentMethod";
+    public static final CharSequence CHECK_SUFFIX = "contentMethod";
 
     @Nullable
-    static Object obtainContentFromTag(View view, Object object) {
+    public static Object obtainContentFromTag(View view, Object object) {
         Object returnObject = null;
 
         try {
@@ -51,7 +51,7 @@ abstract class GenericAdapterUtil {
         return returnObject;
     }
 
-    static void checkTypeAndSetContent(View view, Object content) {
+    public static void checkTypeAndSetContent(View view, Object content) {
         if (view instanceof TextView) {
             ((TextView) view)
                     .setText(
@@ -66,7 +66,7 @@ abstract class GenericAdapterUtil {
         }
     }
 
-    static boolean checkTag(Object tag) {
+    public static boolean checkTag(Object tag) {
         return (tag instanceof String) && ((String) tag).contains(CHECK_SUFFIX);
     }
 
@@ -74,7 +74,7 @@ abstract class GenericAdapterUtil {
         return ((String) tag).split(SPLIT_REGEX)[1];
     }
 
-    static void IdentifyAndSetListener(View view, Object listener) {
+    public static void IdentifyAndSetListener(View view, Object listener) {
         if (listener instanceof OnClickListener) {
             view.setOnClickListener((OnClickListener) listener);
         } else if (listener instanceof OnLongClickListener) {

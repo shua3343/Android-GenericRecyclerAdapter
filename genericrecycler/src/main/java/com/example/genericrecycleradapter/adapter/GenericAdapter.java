@@ -1,4 +1,4 @@
-package com.example.genericrecycleradapter;
+package com.example.genericrecycleradapter.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
