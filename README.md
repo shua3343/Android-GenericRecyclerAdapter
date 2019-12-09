@@ -10,6 +10,20 @@ ___
  This lib uses **Glide 4.9.0** and **AndroidX**.
  **Minimum sdk 14**.
  
+## Patch note
+Were created two new methods: 'getItemByViewId' and 'getPositionByViewId', to obtain the data from the list passed through parameters and the position of the view in the recycler respectively.
+
+wich can be used like this
+```java
+genericAdaper.addListener(R.id.text_view, new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+	aMethod(genericAdapter.getItemByViewId(v.getId()));
+	aSecondMethod(genericAdapter.getPositionByViewId());
+    }
+});
+```
+
 ## How to use
 
 First of all, you need to configure you recycler item layout according to your needs.
@@ -100,7 +114,7 @@ genericAdaper.addListener(R.id.text_view, (View.OnClickListener) v -> aMethod())
     <dependency>
           <groupId>com.github.shua3343</groupId>
           <artifactId>Android-GenericRecyclerAdapter</artifactId>
-          <version>1.0.0</version>
+          <version>1.0.1</version>
     </dependency>
 ``` 
 #### To use with Maven
@@ -117,7 +131,7 @@ genericAdaper.addListener(R.id.text_view, (View.OnClickListener) v -> aMethod())
 
 ```groovy
     dependencies {
-          implementation 'com.github.shua3343:Android-GenericRecyclerAdapter:1.0.0'
+          implementation 'com.github.shua3343:Android-GenericRecyclerAdapter:1.0.1'
     }
 ```
 #### To use with Gradle
@@ -130,4 +144,4 @@ genericAdaper.addListener(R.id.text_view, (View.OnClickListener) v -> aMethod())
 ```
 
 # Current Version
-##### 1.0.0
+##### 1.0.1
