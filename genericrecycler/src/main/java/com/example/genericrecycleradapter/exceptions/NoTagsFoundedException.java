@@ -1,6 +1,6 @@
 package com.example.genericrecycleradapter.exceptions;
 
-public class NoTagsFoundedException extends Exception {
+public class NoTagsFoundedException extends RuntimeException {
 
     private static final long serialVersionUID = -3724209362984251230L;
 

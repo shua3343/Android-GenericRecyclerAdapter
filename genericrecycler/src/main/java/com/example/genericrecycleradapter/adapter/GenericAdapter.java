@@ -46,7 +46,7 @@ public class GenericAdapter<T> extends GenericAdapterConfiguration<T> {
         return getContentObjectsSize();
     }
 
-    public class GenericAdapterViewHolder extends RecyclerView.ViewHolder {
+    public static class GenericAdapterViewHolder extends RecyclerView.ViewHolder {
         GenericAdapterViewHolder(View view) {
             super(view);
         }

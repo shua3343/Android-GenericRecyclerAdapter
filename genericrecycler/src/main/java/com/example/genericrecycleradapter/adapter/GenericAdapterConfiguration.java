@@ -83,6 +83,8 @@ abstract class GenericAdapterConfiguration<T> extends RecyclerView.Adapter<Recyc
         for (int i = 0; i < viewGroup.getChildCount(); i++) {
             if (checkTag(viewGroup.getChildAt(i).getTag())) {
                 ids.add(viewGroup.getChildAt(i).getId());
+            } else if(viewGroup.getChildAt(i) instanceof ViewGroup) {
+                configureIds((ViewGroup) viewGroup.getChildAt(i));
             }
         }
         if (ids.isEmpty()) {
