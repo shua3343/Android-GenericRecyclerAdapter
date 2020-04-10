@@ -9,7 +9,34 @@ ___
 ## Technologies
  This lib uses **Glide 4.9.0** and **AndroidX**.
  **Minimum sdk 14**.
- 
+
+## Patch notes: 1.1.0
+Now you can set contentMethod tags in child components. Let's say that layout B has a layout A inside it, and only layout A has contentMethod tag, it will work with no problems. Like in the example bellow:
+
+(R.layout.layout_a)
+```xml
+...
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:tag="contentMethod:getText"/>
+...
+```
+
+(R.layout.layout_b)
+```xml
+...
+	<include layout="@layout/layout_a"/>
+...
+```
+```java
+...
+GenericAdapter genericAdapter = new GenericAdapter(R.layout.layout_b, genericDataList);
+...
+```
+
+
 ## Patch notes: 1.0.1
 Were created two new methods: 'getItemByViewId' and 'getPositionByViewId', to obtain the data from the list passed through parameters and the position of the view in the recycler respectively.
 
@@ -114,7 +141,7 @@ genericAdaper.addListener(R.id.text_view, (View.OnClickListener) v -> aMethod())
     <dependency>
           <groupId>com.github.shua3343</groupId>
           <artifactId>Android-GenericRecyclerAdapter</artifactId>
-          <version>1.0.1</version>
+          <version>1.1.0</version>
     </dependency>
 ``` 
 #### To use with Maven
@@ -131,7 +158,7 @@ genericAdaper.addListener(R.id.text_view, (View.OnClickListener) v -> aMethod())
 
 ```groovy
     dependencies {
-          implementation 'com.github.shua3343:Android-GenericRecyclerAdapter:1.0.1'
+          implementation 'com.github.shua3343:Android-GenericRecyclerAdapter:1.1.0'
     }
 ```
 #### To use with Gradle
@@ -144,4 +171,4 @@ genericAdaper.addListener(R.id.text_view, (View.OnClickListener) v -> aMethod())
 ```
 
 # Current Version
-##### 1.0.1
+##### 1.1.0		
